@@ -5,144 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Talevia Game - اللعبة الصحية الذكية</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #111 60%, #FF9740 100%);
-      color: #222; margin:0; padding:0; min-height:100vh; direction:rtl;}
-    header{background:linear-gradient(90deg,#FF9740 0%,#1a1a1a 80%);color:#fff;
-      padding:16px 8px 8px 8px; text-align:center; border-bottom:4px solid #ff9740;position:relative;}
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #111 60%, #FF9740 100%); color: #222; margin:0; padding:0; min-height:100vh; direction:rtl;}
+    header{background:linear-gradient(90deg,#FF9740 0%,#1a1a1a 80%);color:#fff;padding:16px 8px 8px 8px; text-align:center; border-bottom:4px solid #ff9740;position:relative;}
     .logo{max-width:88px;border-radius:18px;margin-bottom:7px;box-shadow:0 4px 22px rgba(255,151,64,0.22);}
     h1,h2,h3{color:#FF9740;}
-    main{max-width:560px;margin:20px auto 0 auto;background:#fff;border-radius:18px;
-      box-shadow:0 8px 32px rgba(255,151,64,0.10);padding:22px 15px 28px 15px;min-height:660px;position:relative;}
-    .btn{background:linear-gradient(90deg,#FF9740 30%,#FFA54E 100%);color:#fff;border:none;border-radius:10px;
-      padding:11px 22px;margin:9px 4px;font-weight:bold;font-size:1.02em;letter-spacing:1px;
-      box-shadow:0 2px 12px rgba(255,151,64,.18);cursor:pointer;transition:background 0.2s,transform 0.15s;}
-    .btn:hover{background:#353535;color:#FF9740;transform:scale(1.034);}
-    .input-block{margin:14px 0;}
-    input,select{border:2px solid #ff9740;background:#f0f5ff;border-radius:10px;padding:10px;
-      font-size:1em;width:96%;color:#111;max-width:340px;margin:4px 0 11px 0;}
-    .stars-count,.points-count{background:#111;color:#FFD700;padding:9px 11px;border-radius:12px;
-      display:inline-block;font-size:1.03em;margin:13px 10px 5px 10px;text-shadow:0 2px 9px #FFD70055;}
-    .bar-bg{width:100%;height:24px;background:#eee;border-radius:12px;box-shadow:0 1px 6px #1567de11;
-      overflow:hidden;position:relative;}
-    .bar-fill{background:linear-gradient(90deg,#ff9740 10%,#51bbf6 90%);height:100%;min-width:24px;
-      color:#fff;font-weight:bold;border-radius:12px;transition:width .6s;text-align:center;font-size:1em;line-height:24px;}
-    .activity-list{margin:24px 0 13px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-around;}
-    .activity-card, .act-card{flex:1 1 135px;min-width:120px;background:#FEF4EC;border:2px solid #FF9740;
-      border-radius:12px;margin:7px;padding:13px 7px;text-align:center;cursor:pointer;transition:box-shadow .35s,transform .32s;
-      font-size:1.13em;position:relative;min-height:60px;}
+    main{max-width:590px;margin:20px auto 0 auto;background:#fff;border-radius:18px;box-shadow:0 8px 32px rgba(255,151,64,0.10);padding:22px 15px 28px 15px;min-height:670px;position:relative;}
+    .btn{background:linear-gradient(90deg,#FF9740 30%,#FFA54E 100%);color:#fff;border:none;border-radius:10px;padding:10px 23px;margin:9px 4px;font-weight:bold;font-size:1.01em;box-shadow:0 2px 12px rgba(255,151,64,.18);cursor:pointer;transition:background 0.2s,transform 0.15s;}
+    .btn:hover{background:#353535;color:#FF9740;transform:scale(1.03);}
+    .input-block{margin:13px 0; text-align: center;}
+    input,select{border:2px solid #ff9740;background:#f0f5ff;border-radius:10px;padding:11px;font-size:1em;width:97%;color:#111;max-width:340px;margin:4px 0 11px 0;}
+    .stars-count,.points-count{background:#111;color:#FFD700;padding:9px 11px;border-radius:12px;display:inline-block;font-size:1.01em;margin:13px 10px 7px 10px;text-shadow:0 2px 9px #FFD70045;}
+    .bar-bg{width:100%;height:24px;background:#eee;border-radius:12px;box-shadow:0 1px 6px #1567de18;overflow:hidden;position:relative;}
+    .bar-fill{background:linear-gradient(90deg,#ff9740 10%,#51bbf6 90%);height:100%;min-width:24px;color:#fff;font-weight:bold;border-radius:12px;transition:width .6s;text-align:center;font-size:1em;line-height:24px;}
+    .activity-list{margin:18px 0 13px 0;display:flex;flex-wrap:wrap;gap:15px;justify-content:space-around;}
+    .activity-card, .act-card{flex:1 1 130px;min-width:120px;background:#FEF4EC;border:2px solid #FF9740;border-radius:12px;margin:7px;padding:11px 7px;text-align:center;cursor:pointer;transition:box-shadow .35s,transform .32s;font-size:1.13em;position:relative;min-height:58px;}
     .activity-card:hover, .act-card:hover{box-shadow:0 4px 20px #ff974022;background:#FFF8F1;transform:translateY(-2.5px) scale(1.04);}
     .emoji{font-size:2.1em;display:block;margin-bottom:7px;}
-    .msg{color:#e74c3c;font-weight:bold;margin:7px 0 0 0;}
+    .msg{color:#e74c3c;font-weight:bold;margin:7px 0 0 0; text-align: center;}
     .msg.ok{color:#10ad67;}
     .back-btn{background:#fff;color:#111;border:1.5px solid #ff9740;}
     .back-btn:hover{background:#FF9740;color:#fff;}
     .hidden{display:none !important;}
+    /* روبوت */
     .bot-area{margin:13px 0 7px 0;text-align:center;}
-    .bot{background:#111;width:77px;height:77px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;
-      box-shadow:0 1px 22px #1567de28,0 0 18px #FF974044;animation:botFloat 2.15s infinite;}
+    .bot{background:#111;width:77px;height:77px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 22px #1567de22,0 0 18px #FF974050;animation:botFloat 2.15s infinite;}
     @keyframes botFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-13px);}}
     .bot-face{font-size:2.3em;user-select:none;color:#51bbf6;}
-    .bot-text{color:#232323;background:#FFEBCD;padding:7px 12px;border-radius:13px;
-      font-size:1.07em;margin:10px auto 2px auto;display:inline-block;min-width:80px;}
+    .bot-text{color:#232323;background:#FFEBCD;padding:7px 12px;border-radius:13px;font-size:1.07em;margin:10px auto 2px auto;display:inline-block;min-width:80px;}
     .bot-speaker{display:inline-block;margin-right:7px;color:#51bbf6;cursor:pointer;}
     .mood-select .emoji, .mood-note{margin:9px 0;}
     .mood-note{width:80%;min-height:44px;}
     .cup-row{margin:11px 0;text-align:center;}
     .cup{width:38px;height:50px;background:#c6e6fb;border:2px solid #51bbf6;display:inline-block;margin:5px;border-radius:11px;cursor:pointer;transition:.3s;}
     .cup.filled{background:linear-gradient(180deg,#51bbf6 65%,#1567de 100%);}
+    
     /* لوحة المدير */
-    .admin-panel{background:#f7f9fa;border-radius:16px;padding:11px 6px;margin:5px 0;}
-    .ad-section{margin:13px 0;}
+    .admin-panel{background:#f7f9fa;border-radius:16px;padding:11px 6px;margin:4px 0;}
+    .ad-section{margin:11px 0;}
     .ad-title{color:#ff9740;font-size:1.12em;text-align:center;margin:7px 0;}
     .list-box{background:#fff;border-radius:10px;padding:7px 4px;margin:10px 0;box-shadow:0 1px 6px #ffd70023;}
-    .list-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;
-      background:#F7EEDA;border-radius:7px;padding:7px;}
+    .list-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;background:#F7EEDA;border-radius:7px;padding:7px;}
     .btn-accept{background:#51cf66;}
     .btn-refuse{background:#e74c3c;}
     .btn-del{background:#e74c3c;}
     .btn-info{background:#f2b806;}
-    @media(max-width:610px){main{min-width:99vw!important;max-width:99vw!important;padding:8px 0px;}}
-    @media(max-width:400px){.btn{font-size:.96em;padding:9px 6px;min-width:64px;}}
+    
+    @media(max-width:620px){main{min-width:99vw!important;max-width:99vw!important;padding:8px 0px;}}
+    @media(max-width:400px){.btn{font-size:.96em;padding:8px 6px;min-width:64px;}}
+    .auth-buttons { text-align: center; margin-top: 15px; }
+    
+    /* تنسيق خاص للصورة الشخصية */
+    #user-pic {
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    #user-pic:hover {
+        transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
 <header>
-  <img src="1000365989.jpeg" class="logo" alt="Talevia Logo"
-    onerror="this.style.display='none'" />
+  <img src="1000365989.jpeg" class="logo" alt="Talevia Logo" onerror="this.style.display='none'" />
   <h1>Talevia Game</h1>
 </header>
 <main>
-  <!-- صفحة الدخول -->
-  <div id="auth-section">
-    <h2>تسجيل دخول / حساب جديد</h2>
+    <div id="auth-section">
+    <h2 style="text-align:center;color:#FF9740;">تسجيل الدخول</h2>
+    
     <div class="input-block">
-      <label>نوع المستخدم:</label>
+      <label>أنت:</label>
       <select id="acc-type">
-        <option value="child">طفل</option>
-        <option value="parent">ولي أمر</option>
-        <option value="admin">مدير</option>
+        <option value="child">طفل 👦</option>
+        <option value="parent">ولي أمر 👨‍👩‍👦</option>
+        <option value="admin">مدير النظام 🔐</option>
       </select>
     </div>
-    <div class="input-block" id="acc-block-child">
-      <label>اسم الطفل:</label>
-      <input type="text" id="child-name" maxlength="15" placeholder="مثال: ياسين"/>
-      <label>البريد الإلكتروني:</label>
-      <input type="email" id="child-email" placeholder="example@email.com" />
-      <label>كلمة مرور:</label>
-      <input type="password" id="child-pass" />
+
+    <div id="acc-block-child" class="input-block">
+      <input type="text" id="child-name" placeholder="الاسم (للتسجيل الجديد)" />
+      <input type="email" id="child-email" placeholder="البريد الإلكتروني" />
+      <input type="password" id="child-pass" placeholder="كلمة المرور" />
     </div>
-    <div class="input-block hidden" id="acc-block-parent">
-      <label>اسم ولي الأمر:</label>
-      <input type="text" id="parent-name" maxlength="14" placeholder="مثال: أب محمد"/>
-      <label>إيميل ولي الأمر:</label>
-      <input type="email" id="parent-email" />
-      <label>إيميل الطفل:</label>
-      <input type="email" id="parent-child-email" placeholder="إيميل الطفل المرتبط" />
-      <label>كلمة مرور:</label>
-      <input type="password" id="parent-pass" />
+
+    <div id="acc-block-parent" class="input-block hidden">
+      <input type="text" id="parent-name" placeholder="اسم ولي الأمر" />
+      <input type="email" id="parent-email" placeholder="بريد ولي الأمر" />
+      <input type="email" id="parent-child-email" placeholder="بريد الطفل المرتبط" />
+      <input type="password" id="parent-pass" placeholder="كلمة المرور" />
     </div>
-    <div class="input-block hidden" id="acc-block-admin">
-      <label>كلمة مرور المدير:</label>
-      <input type="password" id="admin-pass" />
+
+    <div id="acc-block-admin" class="input-block hidden">
+      <input type="password" id="admin-pass" placeholder="كود المدير السري" />
     </div>
-    <div>
+
+    <div class="auth-buttons">
       <button class="btn" id="login-btn">دخول</button>
       <button class="btn" id="reg-btn">تسجيل جديد</button>
     </div>
+
     <div class="msg" id="auth-msg"></div>
-    <div class="msg ok hidden" id="pending-msg">في انتظار موافقة المدير على الحساب!</div>
+    <div class="msg ok hidden" id="pending-msg">تم إرسال طلبك بنجاح! انتظر موافقة المدير.</div>
   </div>
-  <!-- لوحة المدير -->
+
   <div id="admin-panel" class="admin-panel hidden">
     <h2 class="ad-title">🔐 لوحة تحكم Talevia Admin</h2>
     <div class="ad-section">
-      <div><b>الطلبات الجديدة:</b></div>
+      <b>الطلبات الجديدة:</b>
       <div id="req-list" class="list-box"></div>
     </div>
     <div class="ad-section">
-      <div><b>المستخدمين:</b></div>
+      <b>المستخدمين:</b>
       <div id="user-list" class="list-box"></div>
     </div>
     <button class="btn back-btn" onclick="adminLogout()">🚪 خروج</button>
   </div>
 
-  <!-- منطقة الطفل وبوت + الأنشطة -->
   <div id="game-section" class="hidden">
     <div class="bot-area">
       <div class="bot"><span class="bot-face" id="bot-face">🤖</span></div>
-      <div class="bot-text" id="bot-msg">أهلاً بك يا بطل! أنا Talevia Bot.<span class="bot-speaker" title="تشغيل الصوت" onclick="speakBot()">🔊</span></div>
+      <div class="bot-text" id="bot-msg">
+        أهلاً بك يا بطل! أنا Talevia Bot.<span class="bot-speaker" title="تشغيل الصوت" onclick="speakBot()">🔊</span>
+      </div>
     </div>
     <div style="text-align:center;">
       <span class="stars-count">⭐ النجوم: <span id="stat-stars">0</span></span>
       <span class="points-count">🏆 النقاط: <span id="stat-points">0</span></span>
       <div class="bar-bg"><div class="bar-fill" id="progress-bar" style="width:0%">0%</div></div>
     </div>
-    <div style="text-align:center;margin:10px 0;">
+    
+    <div style="text-align:center;margin:15px 0;">
       <input type="file" id="pic-upload" accept="image/*" style="display:none;">
-      <button class="btn" onclick="document.getElementById('pic-upload').click();">📷 تحميل صورة شخصية</button>
-      <img id="user-pic" class="rounded" src="" style="max-width:80px;display:none;margin-top:5px;" alt="صورة الطفل" />
+      <button class="btn" onclick="document.getElementById('pic-upload').click();" style="display:block; margin: 0 auto 10px auto;">📷 تحميل صورة شخصية</button>
+      <img id="user-pic" src="" 
+           style="width:100px; height:100px; display:none; margin: 10px auto; border-radius:50%; border:3px solid #ff9740; box-shadow:0 4px 10px rgba(0,0,0,0.2);" 
+           alt="صورة الطفل" />
     </div>
+
     <h3 style="text-align:center;">اختر نشاطك اليومي</h3>
     <div class="activity-list">
       <div class="activity-card" onclick="openAct('food')"><span class="emoji">🥗</span>الطعام الصحي</div>
@@ -151,18 +150,531 @@
       <div class="activity-card" onclick="openAct('mood')"><span class="emoji">😊</span>المشاعر</div>
       <div class="activity-card" onclick="openAct('sleep')"><span class="emoji">🌙</span>النوم الإيجابي</div>
     </div>
-    <div style="text-align:center;">
-      <button class="btn back-btn" onclick="logout()">🚪 خروج</button>
-    </div>
+    <div style="text-align:center;"><button class="btn back-btn" onclick="logout()">🚪 خروج</button></div>
   </div>
 
-  <!-- الأنشطة (مطابقة الكود السابق) ... -->
-  <!-- ... نفس أقسام الأنشطة كما في الكود السابق ... -->
-  <!-- أكواد الأنشطة وLocalStorage والإدارة والبوت الصوتي... إلخ تضاف (كباقي الكود الذي أرسلته سابقاً) ... -->
+  <div id="food-section" class="hidden">
+    <h2>🥗 الطعام الصحي - Talevia Game</h2>
+    <div><b>اختر الوجبة:</b></div>
+    <div class="activity-list" style="flex-wrap:nowrap;">
+      <div class="activity-card" onclick="openMeal('breakfast')"><span class="emoji">🌅</span>الفطور</div>
+      <div class="activity-card" onclick="openMeal('lunch')"><span class="emoji">☀️</span>الغداء</div>
+      <div class="activity-card" onclick="openMeal('dinner')"><span class="emoji">🌙</span>العشاء</div>
+    </div>
+    <div id="meal-content"></div>
+    <button class="btn back-btn" onclick="closeAct('food')">↩️ رجوع</button>
+    <div class="msg" id="food-msg"></div>
+  </div>
 
-<!-- يمكنك استكمال "Activities" بنفس تفاصيل الكود الأخير الذي أرسلته لك وستجد كل الأنشطة والوظائف كاملة متكاملة ومدمجة مع لوحة المدير الفعالة -->
+  <div id="water-section" class="hidden">
+    <h2>💧 شرب الماء - Talevia Game</h2>
+    <div class="cup-row" id="cup-row"></div>
+    <div style="text-align:center;margin:6px;">الأكواب المكتملة: <span id="cup-count">0</span>/8</div>
+    <button class="btn back-btn" onclick="closeAct('water')">↩️ رجوع</button>
+    <div class="msg" id="water-msg"></div>
+  </div>
+
+  <div id="exercise-section" class="hidden">
+    <h2>🏃 النشاط البدني - Talevia Game</h2>
+    <div class="activity-list">
+      <div class="activity-card" onclick="openExercise('running')"><span class="emoji">🏃‍♂️</span>الجري</div>
+      <div class="activity-card" onclick="openExercise('swimming')"><span class="emoji">🏊‍♂️</span>السباحة</div>
+      <div class="activity-card" onclick="openExercise('yoga')"><span class="emoji">🧘</span>يوجا</div>
+      <div class="activity-card" onclick="openExercise('cycling')"><span class="emoji">🚴</span>دراجة</div>
+    </div>
+    <div id="exercise-content"></div>
+    <button class="btn back-btn" onclick="closeAct('exercise')">↩️ رجوع</button>
+    <div class="msg" id="exercise-msg"></div>
+  </div>
+
+  <div id="mood-section" class="hidden">
+    <h2>😊 المشاعر - Talevia Game</h2>
+    <div class="mood-select flex-center" style="text-align:center;">
+      <span class="emoji" onclick="selectMood('سعيد')">😊</span>
+      <span class="emoji" onclick="selectMood('حزين')">😢</span>
+      <span class="emoji" onclick="selectMood('غاضب')">😠</span>
+      <span class="emoji" onclick="selectMood('متحمس')">🤩</span>
+      <span class="emoji" onclick="selectMood('متعب')">😴</span>
+      <span class="emoji" onclick="selectMood('محب')">😍</span>
+    </div>
+    <div style="text-align:center;">
+        <textarea class="mood-note" id="mood-note" placeholder="كيف كان يومك؟"></textarea>
+    </div>
+    <div style="text-align:center;">
+        <button class="btn" onclick="saveMood()">💾 حفظ</button>
+        <button class="btn back-btn" onclick="closeAct('mood')">↩️ رجوع</button>
+    </div>
+    <div class="msg" id="mood-msg"></div>
+  </div>
+
+  <div id="sleep-section" class="hidden">
+    <h2>🌙 النوم الإيجابي - Talevia Game</h2>
+    <div class="input-block">
+      <label>⏰ عدد ساعات نومك الليلة:</label>
+      <input type="number" min="0" max="12" id="sleep-hours" style="width:90px;text-align:center;" />
+      <button class="btn" onclick="saveSleep()">💾 حفظ</button>
+    </div>
+    <div style="margin:16px 0; background:#FEF4EC;padding:12px;border-radius:10px;">
+      <b>✨ تأكيدات إيجابية عشوائية:</b>
+      <div id="affirmation" style="font-size:1.11em;color:#51bbf6;margin:8px 0;"></div>
+      <button class="btn" onclick="newAffirmation()">🔄 تأكيد جديد</button>
+    </div>
+    <button class="btn back-btn" onclick="closeAct('sleep')">↩️ رجوع</button>
+    <div class="msg" id="sleep-msg"></div>
+  </div>
 </main>
-<!-- سكريبت الأنشطة/لوحة المدير/التخزين... (كود الجافاسكريبت) هنا (انقل كامل الدوال من الكود الأخير مباشرة، مع تفعيل showAdminPanel عند تسجيل دخول المدير) -->
-<!-- لم أضع كل الكود هنا حتى لا يتجاوز الحدود ولكن يمكنك نسخ الجزء ANCHOR من سكريبت الكود السابق للأنشطة والإدارة -->
+<script>
+const progressKey = "talevia-progress";
+const usersKey = "talevia-users";
+const sessionKey = "talevia-session";
+const reqKey = "talevia-requests";
+const avatarKey = "talevia-avatar";
+const adminPass = "talevia@0800";
+
+// بيانات الوجبات والأنشطة
+const foods = {
+  breakfast: [
+    { name: "بيض مسلوق", emoji: "🥚" },
+    { name: "شوفان بالفواكه", emoji: "🥣" },
+    { name: "توست بالأفوكادو", emoji: "🥑" },
+    { name: "زبادي بالعسل", emoji: "🍯" },
+    { name: "فواكه طازجة", emoji: "🍎" }
+  ],
+  lunch: [
+    { name: "سلطة خضراء", emoji: "🥗" },
+    { name: "دجاج مشوي", emoji: "🍗" },
+    { name: "أرز بني", emoji: "🍚" },
+    { name: "سمك مشوي", emoji: "🐟" },
+    { name: "خضار مطبوخة", emoji: "🥦" }
+  ],
+  dinner: [
+    { name: "شوربة خضار", emoji: "🍲" },
+    { name: "ساندويتش صحي", emoji: "🥪" },
+    { name: "معكرونة بالخضار", emoji: "🍝" },
+    { name: "سلطة فواكه", emoji: "🥗" },
+    { name: "حمص بالطحينة", emoji: "🫘" }
+  ]
+};
+const affirmations = [
+  "أنا قوي وقادر على تحقيق أهدافي! 💪",
+  "أنا محبوب ومميز! ❤️",
+  "أستطيع أن أتعلم أي شيء أريده! 🌟",
+  "أحب نفسي وأهتم بصحتي! 🌈",
+  "كل يوم أصبح أفضل! ✨",
+  "أنا سعيد ومبدع! 🎨",
+  "أستطيع التغلب على التحديات! 🚀",
+  "أنا صديق رائع! 🤗"
+];
+
+// ==== بيانات المستخدمين والطلبات ====
+let users = JSON.parse(localStorage.getItem(usersKey)) || [];
+let reqs = JSON.parse(localStorage.getItem(reqKey)) || [];
+let session = JSON.parse(localStorage.getItem(sessionKey)) || null;
+
+// تغيير نموذج الدخول/التسجيل حسب النوع
+document.getElementById('acc-type').onchange = function() {
+  let val = this.value;
+  document.getElementById('acc-block-child').classList.toggle('hidden', val !== 'child');
+  document.getElementById('acc-block-parent').classList.toggle('hidden', val !== 'parent');
+  document.getElementById('acc-block-admin').classList.toggle('hidden', val !== 'admin');
+  document.getElementById('auth-msg').innerText = '';
+  document.getElementById('pending-msg').classList.add('hidden');
+};
+
+// تسجيل الدخول
+document.getElementById('login-btn').onclick = function() {
+  let t = document.getElementById('acc-type').value;
+  if (t === 'child') {
+    let email = document.getElementById('child-email').value.trim();
+    let pass = document.getElementById('child-pass').value;
+    let user = users.find(u => u.type === 'child' && u.email === email);
+    if (user) {
+      if (user.pass !== pass) return msg('كلمة مرور خاطئة!');
+      if (!user.accepted) return waitMsg();
+      session = { type: 'child', name: user.name, email: email };
+      saveSession();
+      showGame();
+    } else msg('بيانات غير صحيحة أو الحساب غير موجود، سجّل جديد.');
+  } else if (t === 'parent') {
+    let email = document.getElementById('parent-email').value.trim();
+    let child = document.getElementById('parent-child-email').value.trim();
+    let pass = document.getElementById('parent-pass').value;
+    let user = users.find(
+      u => u.type === 'parent' && u.email === email && u.child === child && u.pass === pass
+    );
+    user && user.accepted
+      ? (session = { type: 'parent', name: user.name, email, child }, saveSession(), alert("مساحة ولي الأمر للتقارير... قيد العمل"))
+      : msg('بيانات خاطئة أو الحساب لم يُقبل بعد.');
+  } else if (t === 'admin') {
+    let pass = document.getElementById('admin-pass').value;
+    if (pass !== adminPass)
+      return msg('كلمة المرور خاطئة!');
+    session = { type: 'admin' };
+    saveSession();
+    showAdmin();
+  }
+};
+
+// تسجيل جديد
+document.getElementById('reg-btn').onclick = function() {
+  let t = document.getElementById('acc-type').value;
+  if(t === 'child') {
+    let name = document.getElementById('child-name').value.trim();
+    let email = document.getElementById('child-email').value.trim();
+    let pass = document.getElementById('child-pass').value;
+    if (!name || !email || !pass) return msg('اكمل كل الحقول!');
+    if (users.some(u=>u.email === email && u.type==='child') || reqs.some(r=>r.email === email && r.type==='child'))
+      return msg('الإيميل مستخدم بالفعل!');
+    reqs.push({type:'child',name,email,pass,accepted:false});
+    localStorage.setItem(reqKey, JSON.stringify(reqs));
+    waitMsg();
+  }
+  else if(t === 'parent'){
+    let name = document.getElementById('parent-name').value.trim();
+    let email = document.getElementById('parent-email').value.trim();
+    let child = document.getElementById('parent-child-email').value.trim();
+    let pass = document.getElementById('parent-pass').value;
+    if (!name || !email || !child || !pass) return msg('اكمل كل الحقول!');
+    if (users.some(u=>u.email === email && u.type==='parent') || reqs.some(r=>r.email === email && r.type==='parent'))
+      return msg('إيميل ولي الأمر مستخدم بالفعل!');
+    reqs.push({type:'parent',name,email,child,pass,accepted:false});
+    localStorage.setItem(reqKey, JSON.stringify(reqs));
+    waitMsg();
+  }
+  else msg("تسجيل المدير غير متاح!");
+};
+
+function msg(t){ document.getElementById('auth-msg').innerText = t; }
+function waitMsg(){ document.getElementById('pending-msg').classList.remove('hidden'); }
+
+function saveSession(){localStorage.setItem(sessionKey,JSON.stringify(session));}
+function clearSession(){localStorage.removeItem(sessionKey);session=null;}
+
+// ========== لوحة المدير ==========
+function showAdmin(){
+  hideAll();
+  document.getElementById('admin-panel').classList.remove('hidden');
+  updateAdminLists();
+}
+function updateAdminLists(){
+  let RL = document.getElementById('req-list');
+  RL.innerHTML = "";
+  reqs = JSON.parse(localStorage.getItem(reqKey)) || [];
+  if(reqs.length===0) RL.innerHTML = "<div class='msg ok'>لا توجد طلبات جديدة</div>";
+  else reqs.forEach((r, i) => {
+    RL.innerHTML += `
+    <div class='list-item'>
+      <span>${r.type==="child"?"👦":"👨‍👩‍👦"} ${r.name||r.email} (${r.email})</span>
+      <span>
+        <button class="btn btn-accept" onclick="acceptReq(${i})">موافقة</button>
+        <button class="btn btn-refuse" onclick="refuseReq(${i})">رفض</button>
+      </span>
+    </div>
+    `;
+  });
+  let UL = document.getElementById('user-list');
+  UL.innerHTML = "";
+  users = JSON.parse(localStorage.getItem(usersKey)) || [];
+  users.forEach((u, i) => {
+    let p = getTodayProg(u.name);
+    UL.innerHTML += `
+    <div class='list-item'>
+      <span>${u.type==="child"?"👦":"👨‍👩‍👦"} <b>${u.name||"--"}</b> (${u.email})</span>
+      <span>
+        <button class="btn btn-info" onclick="showUserInfo(${i})">بيانات</button>
+        <button class="btn btn-del" onclick="delUser(${i})">حذف</button>
+      </span>
+    </div>`;
+  });
+}
+window.acceptReq = function(idx){
+  let req = reqs[idx]; req.accepted = true;
+  users.push(req); reqs.splice(idx,1);
+  localStorage.setItem(usersKey,JSON.stringify(users));
+  localStorage.setItem(reqKey,JSON.stringify(reqs));
+  updateAdminLists();
+};
+window.refuseReq = function(idx){
+  reqs.splice(idx,1);
+  localStorage.setItem(reqKey,JSON.stringify(reqs));
+  updateAdminLists();
+};
+window.delUser = function(idx){
+  if(!confirm("تأكيد حذف المستخدم؟")) return;
+  users.splice(idx,1);
+  localStorage.setItem(usersKey,JSON.stringify(users));
+  updateAdminLists();
+};
+window.showUserInfo = function(idx){
+  let u = users[idx];
+  let p = getTodayProg(u.name);
+  alert(
+    `الاسم: ${u.name||""}
+الإيميل: ${u.email}
+النوع: ${u.type==='child'?'طفل':'ولي أمر'}
+نقاط اليوم: ${p.points||0} 🏆`
+  );
+};
+function adminLogout(){
+  clearSession();
+  hideAll();
+  document.getElementById('auth-section').classList.remove('hidden');
+}
+
+// ============== الأنشطة والوظائف ==============
+function hideAll(){ document.querySelectorAll('main > div').forEach(x=>x.classList.add('hidden')); }
+
+function showGame() {
+  hideAll(); document.getElementById('game-section').classList.remove('hidden');
+  loadStats(); welcomeBot(); picUpdate();
+}
+
+function logout(){
+  clearSession(); hideAll();document.getElementById('auth-section').classList.remove('hidden');
+}
+
+// ==== الروبوت والتحفيز ====
+function welcomeBot(){
+  let n = getChildName();
+  let t = n? `أهلاً بك يا ${n}! أنا Talevia Bot ورفيقك الصحي اليوم 👋.`:"مرحباً بك في Talevia Game!";
+  botText(t,"🤗"); speak(t);
+}
+function botText(txt,face){document.getElementById('bot-msg').innerText=txt;document.getElementById('bot-face').innerText=face||"🤗";}
+function speakBot(){ let txt = document.getElementById('bot-msg').innerText; speak(txt);}
+function speak(txt){
+  if(!('speechSynthesis' in window)) return;
+  let utter = new SpeechSynthesisUtterance(txt); utter.lang="ar-EG"; utter.rate=1; utter.pitch=1.13;
+  window.speechSynthesis.speak(utter);
+}
+
+// ==== بيانات الطفل الحالي والتقدم (تم التعديل للإصلاح) ====
+function getChildName(){if(!session) return ""; return session.name||"";}
+
+// دالة موحدة للتاريخ لتجنب اختلاف التنسيق
+function getTodayDateString() {
+    return new Date().toDateString(); // يعطي صيغة مثل "Sat Nov 22 2025"
+}
+
+// جلب التقدم (للقراءة فقط)
+function getTodayProg(name){
+  let all=JSON.parse(localStorage.getItem(progressKey))||{}, n = name||getChildName();
+  let day = getTodayDateString();
+  if(!all[n]) return {};
+  if(!all[n][day]) return {};
+  return all[n][day];
+}
+
+// دالة إضافة النقاط وتحديث الواجهة (تم الإصلاح)
+function addPoints(pointsToAdd, starsToAdd){
+    let name = getChildName();
+    if(!name) return;
+
+    let all = JSON.parse(localStorage.getItem(progressKey)) || {};
+    let day = getTodayDateString();
+
+    // تأكد من وجود هيكل البيانات
+    if (!all[name]) all[name] = {};
+    if (!all[name][day]) all[name][day] = { points: 0, stars: 0, water: 0 };
+
+    // تحديث النقاط
+    all[name][day].points = (all[name][day].points || 0) + pointsToAdd;
+    all[name][day].stars = (all[name][day].stars || 0) + starsToAdd;
+
+    // حفظ في الذاكرة
+    localStorage.setItem(progressKey, JSON.stringify(all));
+
+    // تحديث الواجهة فوراً
+    loadStats();
+}
+
+// دالة تحديث بيانات النشاط (مثل اختيار الطعام أو الماء)
+function updateActivityData(key, value) {
+    let name = getChildName();
+    if(!name) return;
+
+    let all = JSON.parse(localStorage.getItem(progressKey)) || {};
+    let day = getTodayDateString();
+
+    if (!all[name]) all[name] = {};
+    if (!all[name][day]) all[name][day] = { points: 0, stars: 0 };
+
+    all[name][day][key] = value;
+    localStorage.setItem(progressKey, JSON.stringify(all));
+}
+
+function loadStats(){
+  let prog = getTodayProg();
+  let pts = prog.points || 0;
+  let strs = prog.stars || 0;
+  
+  // تحديث الأرقام
+  document.getElementById("stat-points").innerText = pts;
+  document.getElementById("stat-stars").innerText = strs;
+  
+  // حساب النسبة المئوية (الهدف الافتراضي 100 نقطة)
+  let val = Math.min(100, Math.round((pts / 100) * 100));
+  
+  let fill = document.getElementById("progress-bar");
+  fill.style.width = val + "%";
+  fill.innerText = val + "%";
+}
+
+// ========== صورة الطفل ==========
+document.getElementById('pic-upload').onchange = function(e){
+  let file = e.target.files[0]; if(!file) return;
+  let r = new FileReader();
+  r.onload = function(ev){
+    let b = ev.target.result; localStorage.setItem(avatarKey, b); picUpdate();
+  };
+  r.readAsDataURL(file);
+};
+function picUpdate(){
+  let b = localStorage.getItem(avatarKey)||"";
+  let img = document.getElementById('user-pic');
+  if(b){img.src=b;img.style.display='block';} else img.style.display='none';
+}
+
+// ====== الأنشطة الخمسة تفصيلًا ======
+// الطعام الصحي
+function openAct(act){hideActs(); document.getElementById(act+'-section').classList.remove('hidden');
+  if(act==='food')loadMealStatus();
+  if(act==='water')loadWater();
+  if(act==='exercise')resetExercise();
+  if(act==='mood')document.getElementById('mood-msg').innerText="";
+  if(act==='sleep')newAffirmation();
+}
+function closeAct(act){ document.getElementById(act+'-section').classList.add('hidden'); showGame(); }
+function hideActs(){ document.querySelectorAll('main > div').forEach(x=>x.classList.add('hidden')); }
+
+function loadMealStatus(){ document.getElementById("meal-content").innerHTML = ""; }
+function openMeal(type){
+  let progress = getTodayProg();
+  if(progress["meal_"+type]){ setMsg("food-msg","لقد اخترت وجبة "+type+" بالفعل اليوم!"); return;}
+  let html = "<div style='margin:20px 4px'>";
+  foods[type].forEach(f => {
+    html+= `<button class="btn" onclick="selectFood('${type}','${f.name}','${f.emoji}')">${f.emoji} ${f.name}</button>`;
+  });
+  html+="</div>";
+  document.getElementById("meal-content").innerHTML=html;
+}
+function selectFood(type,food,emoji){
+  let progress = getTodayProg();
+  if(progress["meal_"+type]){ setMsg("food-msg","لقد اخترت وجبتك بالفعل!");return;}
+  
+  // حفظ نوع الوجبة
+  updateActivityData("meal_"+type, food);
+  
+  // إضافة النقاط
+  addPoints(10,1);
+  
+  setMsg("food-msg",`${emoji} أحسنت! حصلت على 10 نقاط ونجمة بعد اختيار ${food}`);
+  setTimeout(()=>closeAct('food'),1800); botText(`${emoji} اختيار ممتاز يا بطل!`); speak(`${emoji} اختيار ممتاز يا ${getChildName()}!`);
+}
+
+// شرب الماء
+function loadWater(){
+  let progress = getTodayProg(), c = progress.water||0, html = "";
+  for(let i=1;i<=8;i++) html += `<span class="cup ${i<=c?'filled':''}" onclick="drinkCup(${i})"></span>`;
+  document.getElementById("cup-row").innerHTML=html;
+  document.getElementById("cup-count").innerText = c;
+}
+function drinkCup(num){
+  let progress = getTodayProg(), cc = progress.water||0;
+  if(num<=cc){ setMsg("water-msg","تم شرب هذا الكوب بالفعل!"); return;}
+  
+  updateActivityData("water", num);
+  addPoints(2,1);
+  
+  setMsg("water-msg",`شربت كوب رقم ${num}! +2 نقاط +نجمة`);
+  loadWater(); botText("اشرب المزيد من الماء لصحة أفضل! 💧"); speak("اشرب المزيد من الماء يا "+getChildName());
+}
+
+// النشاط البدني
+const exercisesList = { running: {name:"الجري",emoji:"🏃‍♂️",min:2}, swimming: {name:"السباحة",emoji:"🏊‍♂️",min:3}, yoga: {name:"يوجا",emoji:"🧘",min:1}, cycling: {name:"دراجة",emoji:"🚴",min:5}};
+let exerciseTimer = null, exerciseSec=0, exerciseType="";
+function resetExercise(){
+  document.getElementById("exercise-content").innerHTML="";
+  exerciseSec=0; exerciseType="";
+  if(exerciseTimer){clearInterval(exerciseTimer);exerciseTimer=null;}
+  document.getElementById("exercise-msg").innerText="";
+}
+function openExercise(type){
+  let progress = getTodayProg();
+  if(progress["exercise_"+type]){ setMsg("exercise-msg","أنهيت هذا التمرين اليوم بالفعل!");return;}
+  exerciseType=type; exerciseSec=0;
+  document.getElementById("exercise-content").innerHTML=`
+    <div style="font-size:1.15em;text-align:center;">
+      ${exercisesList[type].emoji} ${exercisesList[type].name}
+    </div>
+    <div id="timer" style="font-size:2em;color:#51bbf6;margin:10px 0;">00:00</div>
+    <button class="btn" onclick="startEx()">▶️ ابدأ</button>
+    <button class="btn" onclick="endEx()">✅ إنهاء</button>
+  `;
+}
+function startEx(){
+  if(exerciseTimer) return;
+  exerciseTimer = setInterval(()=>{
+    exerciseSec++;
+    document.getElementById('timer').innerText = `${("0"+Math.floor(exerciseSec/60)).slice(-2)}:${("0"+(exerciseSec%60)).slice(-2)}`;
+  },1000);
+}
+function endEx(){
+  if(exerciseTimer){clearInterval(exerciseTimer);exerciseTimer=null;}
+  if(exerciseSec<exercisesList[exerciseType].min*60) return setMsg("exercise-msg",`تمرن على الأقل ${exercisesList[exerciseType].min} دقائق!`);
+  let mins = Math.floor(exerciseSec/60), points = mins*5;
+  
+  updateActivityData("exercise_"+exerciseType, 1);
+  addPoints(points,2);
+  
+  setMsg("exercise-msg",`أحسنت! أكملت ${mins} دقيقة وحصلت على ${points} نقطة.`);
+  setTimeout(()=>closeAct('exercise'),1800); botText("عمل رائع في التمارين الرياضية!"); speak("عمل رائع في التمارين الرياضية يا "+getChildName());
+}
+
+// المشاعر
+let selectedMood = "";
+function selectMood(mood){ selectedMood = mood; }
+function saveMood(){
+  let progress = getTodayProg();
+  if(progress.mood){ setMsg("mood-msg","سجلت مشاعرك اليوم بالفعل!");return;}
+  let note = document.getElementById("mood-note").value.trim();
+  if(!selectedMood && !note){ setMsg("mood-msg","اختر أو اكتب شعورك!");return;}
+  
+  updateActivityData("mood", selectedMood+" "+note);
+  addPoints(5,1);
+  
+  setMsg("mood-msg","تم حفظ مشاعرك. أحسنت! +5 نقاط +نجمة");
+  botText("شعور جميل اليوم!"); speak("شعور جميل اليوم يا "+getChildName());
+  setTimeout(()=>closeAct('mood'),1800);
+}
+
+// النوم
+function saveSleep(){
+  let hours = parseInt(document.getElementById("sleep-hours").value);
+  let progress = getTodayProg();
+  if(progress.sleep){ setMsg("sleep-msg","سجلت نومك اليوم بالفعل!");return;}
+  if(isNaN(hours)||hours<1) return setMsg("sleep-msg","أدخل عدد ساعات النوم!");
+  let pts = hours>=8?15:hours>=6?10:5;
+  
+  updateActivityData("sleep", hours);
+  addPoints(pts,1);
+  
+  setMsg("sleep-msg","أحسنت! حصلت على "+pts+" نقطة ونجمة.");
+  botText("نوم صحي مهم للنمو!"); speak("نوم صحي مهم للنمو يا "+getChildName());
+  setTimeout(()=>closeAct('sleep'),1800);
+}
+function newAffirmation(){
+  let txt = affirmations[Math.floor(Math.random()*affirmations.length)];
+  document.getElementById("affirmation").innerText = txt; speak(txt);
+}
+
+// ========== أدوات ورسائل ==============
+function setMsg(id,t){ document.getElementById(id).innerText=t; }
+
+// ========== تحميل الجلسة عند البدء ===========
+window.onload = function(){
+  if(session && session.type==="child"){showGame();}
+  else if(session && session.type==="admin"){showAdmin();}
+};
+</script>
 </body>
 </html>
